@@ -33,12 +33,6 @@ export default class SignUp extends Component {
     }
   };
 
-  handleBlur = field => evt => {
-    this.setState({
-      touched: { ...this.state.touched, [field]: true }
-    });
-  };
-
   encryptPassword = password => {
     const salt = bcrypt.genSaltSync(2);
     const hash = bcrypt.hashSync(password, salt);
